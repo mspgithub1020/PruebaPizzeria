@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PruebaPizzeria.Aplication;
+using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore.InMemory;
+using PruebaPizzeria.Infraestructura;
 
 namespace PruebaPizzeria
 {
@@ -27,8 +30,15 @@ namespace PruebaPizzeria
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Add(
-                new ServiceDescriptor(typeof(IUserService), typeof(UserService), ServiceLifetime.Scoped)
+            
+
+            services.AddDbContext<EntidadContext>(opt => opt.UseInMemoryDatabase());
+
+
+            /*services.Add(
+                new ServiceDescriptor(typeof(IUserService), typeof(UserService), ServiceLifetime.Scoped);*/                    
+
+
             );
         }
 

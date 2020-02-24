@@ -43,6 +43,10 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
               "version": "(, )"
             }
           },
