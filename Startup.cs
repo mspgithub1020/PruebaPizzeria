@@ -39,13 +39,12 @@ namespace PruebaPizzeria
                new ServiceDescriptor(typeof(IUserContext), typeof(EntidadContext), ServiceLifetime.Scoped)
             );
 
-            services.AddDbContext<EntidadContext>(opt => opt.UseInMemoryDatabase());
+            services.AddDbContext<EntidadContext>(opt => opt.UseInMemoryDatabase("Listpizzeria"));
 
             services.AddMvc().ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
-            }); 
-
+            });
             
         }
 
