@@ -27,7 +27,9 @@ namespace API.Controllers
             // TODO: return Created
             //return Ok(userRegistered);
 
-            return StatusCode(200, userRegistered);
+            //return StatusCode(200, userRegistered);
+
+            return StatusCode(201, userRegistered);
 
         }
     }
