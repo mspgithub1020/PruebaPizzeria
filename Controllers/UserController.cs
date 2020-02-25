@@ -25,7 +25,10 @@ namespace API.Controllers
             }
             UserRegistered userRegistered = _userService.Register(userRegistration);
             // TODO: return Created
-            return Ok(userRegistered);
+            //return Ok(userRegistered);
+
+            return StatusCode(200, userRegistered);
+
         }
     }
 }
