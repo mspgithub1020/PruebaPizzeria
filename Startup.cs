@@ -44,16 +44,9 @@ namespace PruebaPizzeria
             services.AddMvc().ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
-            });
+            }); 
+
             
-            /*
-            services.AddDbContext<PizzeriaContext>(opt =>
-               opt.UseSqlServer(Configuration.GetConnectionString("Pizzeria"))
-            );*/
-                      
-
-
-            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
