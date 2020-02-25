@@ -5,7 +5,7 @@ using PruebaPizzeria.DTO.Usuario;
 
 namespace PruebaPizzeria.Aplication
 {
-    class UserService : BaseService, IUserService
+    public class UserService : BaseService, IUserService
     {
         private readonly IUserContext _context;
         public UserService(IUserContext context) : base(context)

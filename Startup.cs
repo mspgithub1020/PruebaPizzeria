@@ -30,13 +30,27 @@ namespace PruebaPizzeria
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
+
+            services.Add(
+                new ServiceDescriptor(typeof(IUserService), typeof(UserService), ServiceLifetime.Scoped)
+            );
+
+            services.Add(
+               new ServiceDescriptor(typeof(IUserContext), typeof(EntidadContext), ServiceLifetime.Scoped)
+            );
 
             services.AddDbContext<EntidadContext>(opt => opt.UseInMemoryDatabase());
 
-
-            /*services.Add(
-                new ServiceDescriptor(typeof(IUserService), typeof(UserService), ServiceLifetime.Scoped);*/                    
+            services.AddMvc().ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+            
+            /*
+            services.AddDbContext<PizzeriaContext>(opt =>
+               opt.UseSqlServer(Configuration.GetConnectionString("Pizzeria"))
+            );*/
+                      
 
 
             );
